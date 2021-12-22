@@ -99,7 +99,6 @@ body {
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
-    height: 150vh;
 }
   
 h1, h2, h3 {
@@ -164,14 +163,18 @@ input {
 .header{
     width: 100%;
     height: 100vh;
+    padding: 1rem 0;
     background-color: var(--first-color);
 }
 
-
+.nav{
+    height: 80px;
+    background-color: var(--first-color);
+}
 /*=============== NAV ===============*/
 
 .nav__logo{
-    width: 180px;
+    width: 130px;
 }
 .nav__logo img{
     width: 100%;
@@ -195,6 +198,7 @@ input {
     justify-content: space-between;
     align-items: center;
     gap: 3.5rem;
+    padding: 2rem 0;
 }
 .header__link{
     width: 60%;
@@ -220,18 +224,22 @@ input {
     align-items: center;
     justify-content: center;
     border-left: 0.01px solid #99999933;
-    height: 410px;
+    height: 75vh;
     position: relative;
     transition: all .4s ease;
 }
 
 /* ==============ARROW================= */
 .arrow-up{
-    transform: rotate(180deg);
+    width: 60px;
     position: absolute;
     top: -100px;
     display: none;
     transition: .1s;
+}
+.arrow-up img{
+    width: 100%;
+    transform: rotate(90deg);
 }
 
 
@@ -248,13 +256,15 @@ input {
 
 
 .nav__item:hover{
-    width: 80vw;
+    width: 24vw;
     -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--white-color);
 }
 
-
+.nav__item:hover a{
+    transform: scale(0.905);
+}
 
 
 
@@ -265,15 +275,19 @@ input {
     font-size: var(--biggest-font-size);
 }
 .color:nth-child(2):hover{
-    background: linear-gradient(90deg, rgb(128, 19, 19) 0%, hsla(11, 80%, 57%, 1) 100%);
+    background-color: var(--career-first);
     font-size: var(--biggest-font-size);
 }
 .color:nth-child(3):hover{
-    background: linear-gradient(90deg, rgb(74, 33, 121) 10%, hsla(41, 98%, 49%, 1) 100%);
+    background-color: var(--first-color-second);
     font-size: var(--biggest-font-size);
 }
 .color:nth-child(4):hover{
-    background: radial-gradient(circle, hsla(225, 78%, 59%, 1) 0%, hsla(197, 85%, 51%, 1) 100%);
+    background-color: var(--blue-first);
+    font-size: var(--biggest-font-size);
+}
+.color:nth-child(5):hover{
+    background-color: var(--blue-third);
     font-size: var(--biggest-font-size);
 }
 
@@ -289,9 +303,19 @@ input {
     font-size: var(--h2-font-size);
     
 }
+.craftee__info .info__content p{
+    font-size: var(--small-font-size);
+    line-height: 18px;
+}
+.craftee__info .info__content .inquiry{
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+    font-weight: var(--fourth-weight);
+    text-transform: none;
+}
 
 .craftee__info .info__content ul{
-    line-height: 30px;
+    line-height: 26px;
     font-weight: var(--font-semi-bold);
     margin-bottom: var(--mb-1);
 }
@@ -498,6 +522,7 @@ input {
 
 .team-section{
     width: 100%;
+    height: 100vh;
     background-color: var(--title-color);
     text-transform: capitalize;
     padding: 5% 0;
@@ -769,7 +794,7 @@ input {
 .form__container{
     max-width: 95%;
     margin: auto;
-    padding: 3% 0;
+    padding: 6% 0;
 }
 
 .form__container h4{
@@ -785,7 +810,7 @@ input {
 }
 
 .input__details{
-    width: 45%;
+    width: 48%;
     position: relative;
 }
 .form__wrapper .form__input{
@@ -992,7 +1017,7 @@ textarea{
 
 
 
-/* ===================CAREE PAGE============= */
+/* ===================CAREER PAGE============= */
 .career-section{
     width: 100%;
     background-color: var(--career-first);
@@ -1216,14 +1241,7 @@ textarea{
 
 
 
-@media screen and (max-width: 1440px){
-    .contact__content{
-        height: auto;
-    }
-    .career__content{
-        height: auto;
-    }
-}
+
 
 
 
@@ -1307,6 +1325,10 @@ textarea{
 
 
 @media screen and (max-width: 968px) {
+    #fullpageContainer{
+        scroll-snap-stop: normal;
+    }
+
     .nav{
         max-width: 90%;
         margin: auto;
